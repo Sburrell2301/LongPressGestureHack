@@ -14,11 +14,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func onLongPress(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.began{
+            let alertController = UIAlertController(title: nil, message:
+                "Long-Press Gesture Detected", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
+
+    
 
 
 }
